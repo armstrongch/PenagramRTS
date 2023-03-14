@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>units = ds_list_create();
+            <string>event_inherited();
+
+units = ds_list_create();
 selected_unit_type = 0;
 
 crosshair_x = x;
@@ -54,7 +56,9 @@ state = global.base_state_select_unit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>get_input();
+            <string>event_inherited();
+
+get_input();
 process_input();
 </string>
           </argument>
@@ -78,7 +82,9 @@ process_input();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>event_inherited();
+
+draw_self();
 draw_state();
 </string>
           </argument>

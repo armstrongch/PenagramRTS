@@ -12,6 +12,7 @@
     <sprite>sprites\Crosshair_spr</sprite>
     <sprite>sprites\Fish_spr</sprite>
     <sprite>sprites\Water_spr</sprite>
+    <sprite>sprites\CollisionMask_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Grid_bk</background>
