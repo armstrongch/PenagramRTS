@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>unit_type_count = 3;
+            <string>unit_type_count = 4;
 
 unit_objects[0] = Guy_obj;
 unit_sprites[0] = Guy_spr;
@@ -38,6 +38,10 @@ unit_player_buildable[1] = false;
 unit_objects[2] = Guy2_obj;
 unit_sprites[2] = Guy2_spr;
 unit_player_buildable[2] = true;
+
+unit_objects[3] = Flower_obj;
+unit_sprites[3] = Flower_spr;
+unit_player_buildable[3] = false;
 </string>
           </argument>
         </arguments>

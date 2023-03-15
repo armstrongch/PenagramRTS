@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\Base_spr</sprite>
     <sprite>sprites\Guy_spr</sprite>
+    <sprite>sprites\Flower_spr</sprite>
     <sprite>sprites\Guy2_spr</sprite>
     <sprite>sprites\Crosshair_spr</sprite>
     <sprite>sprites\Fish_spr</sprite>
@@ -43,6 +44,7 @@
     <script>scripts\get_crosshair_pos.gml</script>
     <script>scripts\set_depth.gml</script>
     <script>scripts\rounded_to_grid.gml</script>
+    <script>scripts\get_adjacent_instances_of_object.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Unit_obj</object>
@@ -50,6 +52,7 @@
     <object>objects\Guy_obj</object>
     <object>objects\Guy2_obj</object>
     <object>objects\Fish_obj</object>
+    <object>objects\Flower_obj</object>
     <object>objects\UnitFactory_obj</object>
     <object>objects\MapManager_obj</object>
     <object>objects\Water_obj</object>

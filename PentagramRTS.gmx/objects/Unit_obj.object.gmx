@@ -34,6 +34,8 @@ move_speed = 4;
 
 hit_points = 4;
 max_hit_points = 4;
+
+team_num = 0; //overwritten by create_unit
 </string>
           </argument>
         </arguments>
@@ -85,6 +87,11 @@ else if (target_y &lt; y)
 if (hit_points &lt;= 0)
 {
     instance_destroy();
+}
+
+if (hit_points &gt;= max_hit_points)
+{
+    hit_points = max_hit_points;
 }
 </string>
           </argument>

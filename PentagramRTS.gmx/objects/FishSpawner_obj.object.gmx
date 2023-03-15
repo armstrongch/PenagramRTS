@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fish_spawn_counter = 60;
+            <string>fish_spawn_counter = 90;
 alarm[0] = fish_spawn_counter;
 </string>
           </argument>
@@ -49,7 +49,7 @@ alarm[0] = fish_spawn_counter;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = fish_spawn_counter;
+            <string>
 
 var spawn_fish = false;
 
@@ -67,6 +67,11 @@ else
 if (spawn_fish)
 {
     create_unit(x, y, Fish_obj, 0);
+    alarm[0] = fish_spawn_counter;
+}
+else
+{
+    alarm[0] = 5;
 }
 </string>
           </argument>
