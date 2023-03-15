@@ -32,7 +32,7 @@ unit_sprites[0] = Guy_spr;
 unit_player_buildable[0] = true;
 
 unit_objects[1] = Fish_obj;
-unit_sprites[1] = Fish_obj;
+unit_sprites[1] = Fish_spr;
 unit_player_buildable[1] = false;
 
 unit_objects[2] = Guy2_obj;

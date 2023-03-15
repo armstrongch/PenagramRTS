@@ -1,8 +1,8 @@
-//create_unit(x_pos, y_pos, unit_type, team_num)
+//create_unit(x_pos, y_pos, unit_object, team_num)
 
 var x_pos = argument0;
 var y_pos = argument1;
-var unit_object = UnitFactory_obj.unit_objects[argument2];
+var unit_object = argument2;
 var team_num = argument3;
 
 

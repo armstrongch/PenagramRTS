@@ -112,17 +112,13 @@ if (hit_points &lt;= 0)
 
 if (hit_points &lt; max_hit_points)
 {
-    var heart_count = ceil(max_hit_points/4);
+    var heart_count = ceil(hit_points/4);
     var hp_draw_counter = 4;
     
     for (var i = x - 8*(heart_count-1); i &lt;= x + 8*(heart_count-1); i += 16;)
     {
         var subimage = 4;
-        if (hp_draw_counter - 4 &gt;= hit_points)
-        {
-            subimage = 0;
-        }
-        else if (hit_points &lt; hp_draw_counter)
+        if (hit_points &lt; hp_draw_counter)
         {
             subimage = hit_points % 4;
         }
