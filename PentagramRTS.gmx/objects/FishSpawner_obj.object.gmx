@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fish_spawn_counter = 90;
+            <string>if (instance_number(BalanceManager_obj) == 0) { instance_create(0, 0, BalanceManager_obj); }
+
+fish_spawn_counter = BalanceManager_obj.fish_spawn_counter;
 alarm[0] = fish_spawn_counter;
 </string>
           </argument>

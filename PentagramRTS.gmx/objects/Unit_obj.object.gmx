@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>mask_index = CollisionMask_spr;
+            <string>if (instance_number(BalanceManager_obj) == 0) { instance_create(0, 0, BalanceManager_obj); }
+
+mask_index = CollisionMask_spr;
 
 target_x = x;
 target_y = y;
@@ -36,6 +38,8 @@ hit_points = 4;
 max_hit_points = 4;
 
 team_num = 0; //overwritten by create_unit
+
+damage_threshold_to_show_health = 1;
 </string>
           </argument>
         </arguments>

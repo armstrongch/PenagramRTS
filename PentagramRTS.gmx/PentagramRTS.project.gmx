@@ -59,6 +59,7 @@
     <object>objects\Water_obj</object>
     <object>objects\FishSpawner_obj</object>
     <object>objects\UnitUIManager_obj</object>
+    <object>objects\BalanceManager_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Battle_rm</room>

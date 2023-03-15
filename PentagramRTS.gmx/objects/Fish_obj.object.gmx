@@ -27,11 +27,13 @@
             <kind>1</kind>
             <string>event_inherited();
 
-max_hit_points = 12;
-hit_points = 12;
+max_hit_points = BalanceManager_obj.fish_max_hit_points;
+hit_points = max_hit_points;
 
-hunger_timer = 15;
+hunger_timer = BalanceManager_obj.fish_hunger_timer;
 alarm[0] = hunger_timer;
+
+move_speed = BalanceManager_obj.fish_move_speed;
 </string>
           </argument>
         </arguments>
@@ -115,7 +117,7 @@ if (x == target_x &amp;&amp; y == target_y)
     }
     
     //eat flowers to restore health
-    if (hit_points &lt;= max_hit_points - 3)
+    if (hit_points &lt; max_hit_points)
     {
         var adjacent_flowers = get_adjacent_instances_of_object(Flower_obj);
         for (var i = 0; i &lt; ds_list_size(adjacent_flowers); i += 1)
@@ -124,7 +126,8 @@ if (x == target_x &amp;&amp; y == target_y)
             if (test_flower.has_food)
             {
                 test_flower.has_food = false;
-                hit_points += 3;
+                hit_points = min(max_hit_points, hit_points + 3);
+                alarm[0] = hunger_timer;
                 
                 if (hit_points &gt;= max_hit_points)
                 {

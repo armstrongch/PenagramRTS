@@ -30,7 +30,7 @@
 image_speed = 0;
 
 has_food = true;
-grow_back_counter = 120;
+grow_back_counter = BalanceManager_obj.flower_grow_back_counter;
 </string>
           </argument>
         </arguments>

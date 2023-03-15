@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,26 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (Unit_obj)
-{
-    if abs(hit_points - max_hit_points) &gt;= damage_threshold_to_show_health
-    {
-        var heart_count = ceil(hit_points/4);
-        var hp_draw_counter = 4;
-        
-        for (var i = x - 8*(heart_count-1); i &lt;= x + 8*(heart_count-1); i += 16;)
-        {
-            var subimage = 4;
-            if (hit_points &lt; hp_draw_counter)
-            {
-                subimage = hit_points % 4;
-            }
-            draw_sprite(Heart_spr, subimage, i, y-24);
-            hp_draw_counter += 4;
-        }
-            
-    }
-}
+            <string>fish_max_hit_points = 4;
+fish_hunger_timer = 30;
+fish_move_speed = 1.5;
+//Fish will die in 240 frames, and will travel 15 squares in that time
+
+fish_spawn_counter = 90;
+
+flower_grow_back_counter = 300;
 </string>
           </argument>
         </arguments>
