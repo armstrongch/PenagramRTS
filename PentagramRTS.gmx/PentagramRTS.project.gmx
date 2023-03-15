@@ -16,6 +16,7 @@
     <sprite>sprites\FishSpawner_spr</sprite>
     <sprite>sprites\CollisionMask_spr</sprite>
     <sprite>sprites\Heart_spr</sprite>
+    <sprite>sprites\ColorScheme_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\Grid_bk</background>
@@ -57,6 +58,7 @@
     <object>objects\MapManager_obj</object>
     <object>objects\Water_obj</object>
     <object>objects\FishSpawner_obj</object>
+    <object>objects\UnitUIManager_obj</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Battle_rm</room>

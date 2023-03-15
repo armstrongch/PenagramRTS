@@ -116,24 +116,6 @@ if (hit_points &gt;= max_hit_points)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
-if (hit_points &lt; max_hit_points)
-{
-    var heart_count = ceil(hit_points/4);
-    var hp_draw_counter = 4;
-    
-    for (var i = x - 8*(heart_count-1); i &lt;= x + 8*(heart_count-1); i += 16;)
-    {
-        var subimage = 4;
-        if (hit_points &lt; hp_draw_counter)
-        {
-            subimage = hit_points % 4;
-        }
-        draw_sprite(Heart_spr, subimage, i, y-24);
-        hp_draw_counter += 4;
-    }
-        
-}
 </string>
           </argument>
         </arguments>

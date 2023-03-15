@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
-  <colour>0</colour>
+  <colour>13886449</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(0, 0, MapManager_obj);</code>
   <enableViews>0</enableViews>

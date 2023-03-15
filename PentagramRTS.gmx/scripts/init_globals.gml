@@ -9,3 +9,8 @@ if (instance_number(UnitFactory_obj) == 0)
 {
     instance_create(0, 0, UnitFactory_obj);
 }
+
+if (instance_number(UnitUIManager_obj) == 0)
+{
+    instance_create(0, 0, UnitUIManager_obj);
+}
