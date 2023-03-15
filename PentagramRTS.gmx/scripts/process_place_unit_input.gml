@@ -10,8 +10,7 @@ else
     {
         if (!collision_circle(crosshair_x, crosshair_y, 16, Unit_obj, true, false))
         {
-            create_unit(crosshair_x, crosshair_y, selected_unit_type, team_num,
-                point_direction(x, y, crosshair_x, crosshair_y));
+            create_unit(crosshair_x, crosshair_y, selected_unit_type, team_num);
             state = global.base_state_select_unit;
         }
     }

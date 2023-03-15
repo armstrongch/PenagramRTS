@@ -84,7 +84,6 @@ process_input();
             <kind>1</kind>
             <string>event_inherited();
 
-draw_self();
 draw_state();
 </string>
           </argument>

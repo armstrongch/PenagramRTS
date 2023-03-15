@@ -7,7 +7,118 @@
   <persistent>0</persistent>
   <parentName>Unit_obj</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+max_hit_points = 12;
+hit_points = 12;
+
+hunger_timer = 15;
+alarm[0] = hunger_timer;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit_points -= 1;
+alarm[0] = hunger_timer;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+
+direction = point_direction(x, y, room_width/2, room_height/2) + 90;
+image_angle = direction;
+
+if (x == target_x &amp;&amp; y == target_y)
+{
+    var best_water = noone;
+    var best_dif = -1;
+    
+    for (var i = 0; i &lt; 4; i += 1)
+    {
+        var test_water = collision_point(
+            x + cos(i*pi/2)*32, y - sin(i*pi/2)*32,
+            Water_obj, false, true);
+        
+        if (test_water != noone)
+        {
+            var test_dir = point_direction(x, y, test_water.x+16, test_water.y+16);
+            var test_dif = abs(angle_difference(direction, test_dir))
+            
+            if (best_water == noone || test_dif &lt; best_dif)
+            {
+                best_water = test_water;
+                best_dif = test_dif;
+            }
+        }
+    }
+    
+    if (best_water != noone)
+    {
+        target_x = best_water.x;
+        target_y = best_water.y;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

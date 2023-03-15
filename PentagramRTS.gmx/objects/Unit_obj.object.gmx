@@ -26,6 +26,111 @@
           <argument>
             <kind>1</kind>
             <string>mask_index = CollisionMask_spr;
+
+target_x = x;
+target_y = y;
+
+move_speed = 4;
+
+hit_points = 4;
+max_hit_points = 4;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (abs(target_x - x) &lt;= move_speed)
+{
+    x = target_x;
+}
+else if (target_x &gt; x)
+{
+    x += move_speed;
+}
+else if (target_x &lt; x)
+{
+    x -= move_speed;
+}
+
+if (abs(target_y - y) &lt;= move_speed)
+{
+    y = target_y;
+}
+else if (target_y &gt; y)
+{
+    y += move_speed;
+}
+else if (target_y &lt; y)
+{
+    y -= move_speed;
+}
+
+if (hit_points &lt;= 0)
+{
+    instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+if (hit_points &lt; max_hit_points)
+{
+    var heart_count = ceil(max_hit_points/4);
+    var hp_draw_counter = 4;
+    
+    for (var i = x - 8*(heart_count-1); i &lt;= x + 8*(heart_count-1); i += 16;)
+    {
+        var subimage = 4;
+        if (hp_draw_counter - 4 &gt;= hit_points)
+        {
+            subimage = 0;
+        }
+        else if (hit_points &lt; hp_draw_counter)
+        {
+            subimage = hit_points % 4;
+        }
+        draw_sprite(Heart_spr, subimage, i, y-24);
+        hp_draw_counter += 4;
+    }
+        
+}
 </string>
           </argument>
         </arguments>
