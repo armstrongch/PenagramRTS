@@ -34,6 +34,8 @@ hunger_timer = BalanceManager_obj.fish_hunger_timer;
 alarm[0] = hunger_timer;
 
 move_speed = BalanceManager_obj.fish_move_speed;
+
+direction = point_direction(x, y, room_width/2, room_height/2) + 90;
 </string>
           </argument>
         </arguments>
@@ -82,7 +84,6 @@ alarm[0] = hunger_timer;
             <kind>1</kind>
             <string>event_inherited();
 
-direction = point_direction(x, y, room_width/2, room_height/2) + 90;
 image_angle = direction;
 
 if (x == target_x &amp;&amp; y == target_y)
@@ -114,6 +115,7 @@ if (x == target_x &amp;&amp; y == target_y)
     {
         target_x = best_water.x;
         target_y = best_water.y;
+        direction = point_direction(x, y, target_x, target_y);
     }
     
     //eat flowers to restore health
