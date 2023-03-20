@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\Base_spr</sprite>
+    <sprite>sprites\Tree_spr</sprite>
     <sprite>sprites\Guy_spr</sprite>
     <sprite>sprites\Flower_spr</sprite>
     <sprite>sprites\Guy2_spr</sprite>
@@ -17,13 +18,11 @@
     <sprite>sprites\CollisionMask_spr</sprite>
     <sprite>sprites\Heart_spr</sprite>
     <sprite>sprites\ColorScheme_spr</sprite>
+    <sprite>sprites\Grid_spr</sprite>
   </sprites>
-  <backgrounds name="background">
-    <background>background\Grid_bk</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\create_base.gml</script>
     <script>scripts\create_unit.gml</script>
     <script>scripts\init_globals.gml</script>
     <script>scripts\get_input.gml</script>
@@ -46,6 +45,7 @@
     <script>scripts\set_depth.gml</script>
     <script>scripts\rounded_to_grid.gml</script>
     <script>scripts\get_adjacent_instances_of_object.gml</script>
+    <script>scripts\get_bases_sorted_by_y_then_x.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\Unit_obj</object>
@@ -54,12 +54,15 @@
     <object>objects\Guy2_obj</object>
     <object>objects\Fish_obj</object>
     <object>objects\Flower_obj</object>
-    <object>objects\UnitFactory_obj</object>
-    <object>objects\MapManager_obj</object>
     <object>objects\Water_obj</object>
     <object>objects\FishSpawner_obj</object>
-    <object>objects\UnitUIManager_obj</object>
-    <object>objects\BalanceManager_obj</object>
+    <objects name="Managers">
+      <object>objects\MapManager_obj</object>
+      <object>objects\UnitFactory_obj</object>
+      <object>objects\UnitUIManager_obj</object>
+      <object>objects\BalanceManager_obj</object>
+      <object>objects\GameManager_obj</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Battle_rm</room>

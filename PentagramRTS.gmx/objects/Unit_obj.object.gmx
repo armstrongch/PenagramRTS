@@ -38,6 +38,7 @@ hit_points = 4;
 max_hit_points = 4;
 
 team_num = 0; //overwritten by create_unit
+player_num = 0; //overwritten by create_unit
 
 damage_threshold_to_show_health = 1;
 </string>

@@ -12,7 +12,7 @@ else
         {
             create_unit(crosshair_x, crosshair_y,
                 UnitFactory_obj.unit_objects[selected_unit_type],
-                team_num);
+                team_num, player_num);
             state = global.base_state_select_unit;
         }
     }

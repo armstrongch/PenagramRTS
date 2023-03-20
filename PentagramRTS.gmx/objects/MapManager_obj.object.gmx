@@ -27,25 +27,10 @@
             <kind>1</kind>
             <string>init_globals();
 
-var center_x = room_width/2;
-var center_y = room_height/2;
-var dist_from_center = room_height/3;
-var rad_angle_incr = 2 * pi / 4;
-var start_angle = pi;
-
-for (var i = 0; i &lt; 4; i += 1)
-{
-    var player_type = global.player_type_cpu;
-    if (i == 0)
-    {
-        player_type = global.player_type_human_one;
-    }
-    create_base(
-        rounded_to_grid(center_x + cos(start_angle + rad_angle_incr*i) * dist_from_center),
-        rounded_to_grid(center_y - sin(start_angle + rad_angle_incr*i) * dist_from_center),
-        i+1,
-        player_type);
-}
+x1 = 32*4;
+y1 = 0;
+x2 = room_width - 32*4;
+y2 = room_height;
 </string>
           </argument>
         </arguments>
@@ -69,6 +54,35 @@ for (var i = 0; i &lt; 4; i += 1)
           <argument>
             <kind>1</kind>
             <string>set_depth();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for (var i = x1; i &lt; x2; i += 32)
+{
+    for (var j = y1; j &lt; y2; j += 32)
+    {
+        draw_sprite(Grid_spr, 0, i, j);
+    }
+}
 </string>
           </argument>
         </arguments>

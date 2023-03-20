@@ -33,7 +33,10 @@ selected_unit_type = 0;
 crosshair_x = x;
 crosshair_y = y;
 
-state = global.base_state_select_unit;
+state = noone;
+
+player_num = 0;
+team_num = 0;
 </string>
           </argument>
         </arguments>
@@ -56,7 +59,14 @@ state = global.base_state_select_unit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
+            <string>if (instance_number(GameManager_obj) &gt; 0)
+{
+    state = global.base_state_select_unit;
+    control_type = GameManager_obj.player_control_type[player_num];
+    team_num = GameManager_obj.player_team[player_num];
+}
+
+event_inherited();
 
 get_input();
 process_input();

@@ -33,9 +33,43 @@ hit_points = max_hit_points;
 hunger_timer = BalanceManager_obj.fish_hunger_timer;
 alarm[0] = hunger_timer;
 
+grow_timer = BalanceManager_obj.fish_grow_timer;
+alarm[1] = grow_timer;
+size = 1;
+max_size = 3;
+
 move_speed = BalanceManager_obj.fish_move_speed;
 
-direction = point_direction(x, y, room_width/2, room_height/2) + 90;
+direction = point_direction(x, y, room_width/2, room_height/2);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>size += 1;
+if (size &lt; max_size)
+{
+    alarm[1] = grow_timer;
+}
 </string>
           </argument>
         </arguments>
@@ -84,7 +118,9 @@ alarm[0] = hunger_timer;
             <kind>1</kind>
             <string>event_inherited();
 
+image_speed = 0;
 image_angle = direction;
+image_index = size-1;
 
 if (x == target_x &amp;&amp; y == target_y)
 {

@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>fish_max_hit_points = 4;
-fish_hunger_timer = 40;
+fish_hunger_timer = 50;
 fish_move_speed = 1;
-//Fish will die in 240 frames, and will travel 15 squares in that time
+fish_grow_timer = 150;
 
 fish_spawn_counter = 90;
 

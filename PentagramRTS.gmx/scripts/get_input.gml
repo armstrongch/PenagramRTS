@@ -1,4 +1,4 @@
-//get_input(player_type)
+//get_input(control_type)
 accept_input = false;
 reject_input = false;
 accept_pressed_input = false;
@@ -12,9 +12,9 @@ down_pressed_input = false;
 left_pressed_input = false;
 right_pressed_input = false;
 
-switch (player_type)
+switch (control_type)
 {
-    case global.player_type_human_one:
+    case global.control_type_keyboard_one:
         accept_input = keyboard_check(vk_space);
         if accept_input { show_debug_message("accept_input"); }
         
